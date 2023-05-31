@@ -1,4 +1,3 @@
-import React from "react";
 import Endpoint from "../Endpoint/Endpoint";
 import Title from "../Title/Title";
 
