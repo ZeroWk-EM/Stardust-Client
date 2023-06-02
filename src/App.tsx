@@ -1,9 +1,12 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
-import Character from "./page/Character";
 import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
+
+import Character from "./page/Character";
+
+
 
 function App() {
   return (
@@ -12,8 +15,16 @@ function App() {
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route index path="/characters" element={<Character />} />
+        <Route index path="/characters" element={<Character />} />
+        <Route index path="/characters" element={<Character />} />
+        <Route index path="/characters" element={<Character />} />
+        <Route index path="/characters" element={<Character />} />
+        <Route index path="/characters" element={<Character />} />
+        <Route index path="/characters" element={<Character />} />
+        <Route index path="/characters" element={<Character />} />
+        <Route index path="/characters" element={<Character />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
