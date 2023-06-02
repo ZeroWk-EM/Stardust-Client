@@ -41,18 +41,27 @@ const Character = () => {
         </div>
       </div>
       <div className="d-flex justify-content-center align-items-center mt-4">
-      <span className="badge text-bg-warning">Total Character {Number(totalCharacter)}</span>
+        <span className="badge text-bg-warning">
+          Total Characters {Number(totalCharacter)}
+        </span>
       </div>
       <div className="character bg-dark">
         <div className="container mt-4">
           <div className="row row-cols-1 row-cols-md-3 g-4">
-            {page === 1 ? <NewElement title={"Character"}><CharacterModal action="Create"/></NewElement> : <></>}
+            {page === 1 ? (
+              <NewElement title={"Character"}>
+                <CharacterModal action="Create" />
+              </NewElement>
+            ) : (
+              <></>
+            )}
             {character &&
               character.map((item) => {
                 return (
                   <Card
                     image={String(item.image)}
                     full_name={`${item.name} ${item.surname}`}
+                    id={String(item._id)}
                   />
                 );
               })}
