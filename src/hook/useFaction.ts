@@ -1,21 +1,26 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import IFaction from "../interface/faction.interface";
-const urlEndpoint = "http://localhost:5000/v1/factions";
+import axios from "axios";
+const urlFaction = "http://localhost:5000/v1/factions";
 
 export const useFaction = (
-  props: IFaction
-): [IFaction[]] => {
-  const [factions, setFactions] = useState<IFaction[]>([]);
+  props: IFaction,
+  page = 1
+): [IFaction[], Number, Number] => {
+  const [faction, setfaction] = useState<IFaction[]>([]);
+  const [maxpage, setMaxpage] = useState(0);
+  const [totalFaction, settotalFaction] = useState(0);
   useEffect(() => {
     axios
-      .get<IFaction>(`${urlEndpoint}`)
+      .get<IFaction>(`${urlFaction}?page=${page}`)
       .then((response: any) => {
-        setFactions(response.data.factions);
+        setfaction(response.data.factions);
+        setMaxpage(response.data.info.maxpage);
+        settotalFaction(response.data.info.totalFaction);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
-  return [factions];
+  }, [page]);
+  return [faction, maxpage, totalFaction];
 };
