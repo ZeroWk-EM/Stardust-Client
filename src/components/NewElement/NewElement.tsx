@@ -4,7 +4,7 @@ const NewElement = (props: { title: string,children:JSX.Element }) => {
   return (
     <>
     <div className="col-md-3">
-      <div className="card text-center" style={{minHeight:"500px"}}>
+      <div className="card text-center h-100" style={{minHeight:"500px"}}>
         <div className="card-body d-flex justify-content-center align-items-center flex-column">
           <h5 className="card-title">Add {props.title}</h5>
           <button
