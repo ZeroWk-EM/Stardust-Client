@@ -3,7 +3,7 @@ import IMovie from "../interface/film.interface";
 import axios from "axios";
 const urlCharacter = "http://localhost:5000/v1/movies";
 
-export const useFilm = (props: IMovie): [IMovie[]] => {
+export const useMovie = (props: IMovie): [IMovie[]] => {
   const [film, setFilm] = useState<IMovie[]>([]);
   useEffect(() => {
     axios
