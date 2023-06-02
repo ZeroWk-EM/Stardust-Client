@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import logo from "../Navbar/asset/navLogo.png";
 import "./Footer.css";
 const Footer = () => {
