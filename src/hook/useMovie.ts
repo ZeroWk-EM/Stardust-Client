@@ -1,19 +1,26 @@
 import { useState, useEffect } from "react";
-import IMovie from "../interface/film.interface";
+import IMovie from "../interface/movie.interface";
 import axios from "axios";
-const urlCharacter = "http://localhost:5000/v1/movies";
+const urlMovie = "http://localhost:5000/v1/movies";
 
-export const useMovie = (props: IMovie): [IMovie[]] => {
-  const [film, setFilm] = useState<IMovie[]>([]);
+export const useMovie = (
+  props: IMovie,
+  page = 1
+): [IMovie[], Number, Number] => {
+  const [movie, setmovie] = useState<IMovie[]>([]);
+  const [maxpage, setMaxpage] = useState(0);
+  const [totalMovie, settotalMovie] = useState(0);
   useEffect(() => {
     axios
-      .get<IMovie>(`${urlCharacter}`)
+      .get<IMovie>(`${urlMovie}?page=${page}`)
       .then((response: any) => {
-        setFilm(response.data.movies);
+        setmovie(response.data.movies);
+        setMaxpage(response.data.info.maxpage);
+        settotalMovie(response.data.info.totalMovie);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
-  return [film];
+  }, [page]);
+  return [movie, maxpage, totalMovie];
 };
