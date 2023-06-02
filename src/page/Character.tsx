@@ -2,7 +2,7 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
 import { useCharacter } from "../hook/useCharacter";
-
+import CharacterModal from "../components/modal/characterModal";
 const Character = () => {
   const [page, setPage] = useState<number>(1);
   let [character, maxpage, totalCharacter] = useCharacter({}, page);
@@ -46,7 +46,7 @@ const Character = () => {
       <div className="character bg-dark">
         <div className="container mt-4">
           <div className="row row-cols-1 row-cols-md-3 g-4">
-            {page === 1 ? <NewElement title={"Character"} /> : <></>}
+            {page === 1 ? <NewElement title={"Character"}><CharacterModal action="Create"/></NewElement> : <></>}
             {character &&
               character.map((item) => {
                 return (
