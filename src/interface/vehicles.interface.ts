@@ -1,6 +1,7 @@
 import { VechicleEnum } from "./enum/vehicle.enum";
 
 interface IVehicles {
+  _id?: string;
   image?: string;
   name?: string;
   model?: string;

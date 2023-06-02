@@ -1,4 +1,5 @@
 interface ISerie {
+  _id?: string;
   image?: string;
   title?: string;
   seasons?: number;

@@ -1,6 +1,7 @@
 import { DesignationEnum } from "./enum/designation.enum";
 
 interface ISpecie {
+  _id?: string;
   image?: string;
   name?: string;
   designation?: DesignationEnum;

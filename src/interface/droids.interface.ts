@@ -1,6 +1,7 @@
 import { DroidEnum } from "./enum/droid.enum";
 
 interface IDroid {
+  _id?:string;
   image?: string;
   name?: string;
   type?: DroidEnum;
