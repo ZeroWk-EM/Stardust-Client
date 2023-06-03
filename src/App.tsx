@@ -26,6 +26,8 @@ import SingleTechnologie from "./page/Details/SingleTechnologie";
 import SingleVehicle from "./page/Details/SingleVehicle";
 import SingleWeapon from "./page/Details/SingleWeapon";
 
+import CharacterCRUD from "./components/crud/characterCRUD";
+
 function App() {
   return (
     <div className="App bg-dark">
@@ -35,6 +37,8 @@ function App() {
 
         <Route path="/characters">
           <Route index element={<Character />} />
+          <Route path="create" element={<CharacterCRUD action="Create" />} />
+          <Route path="edit/:id" element={<CharacterCRUD action="Update" />} />
           <Route path=":id" element={<SingleCharacter />} />
         </Route>
 
