@@ -1,8 +1,8 @@
-import "./crud.css";
+import "./css/crud.css";
 import { useMovie } from "../../hook/useMovie";
 import { useFaction } from "../../hook/useFaction";
-import { MultiSelect, MultiSelectChangeEvent } from "primereact/multiselect";
-import { useRef, useState } from "react";
+import { MultiSelect } from "primereact/multiselect";
+import {  useState } from "react";
 import IMovie from "../../interface/movie.interface";
 import IFaction from "../../interface/faction.interface";
 import { useSerie } from "../../hook/UseSeries";
@@ -12,9 +12,7 @@ import { useWeapon } from "../../hook/useWeapon";
 import IVehicles from "../../interface/vehicles.interface";
 import IWeapons from "../../interface/weapons.interface";
 import axios from "axios";
-import { create } from "domain";
 import { useNavigate } from "react-router-dom";
-import ICharacter from "../../interface/characters.interface";
 
 const CharacterCRUD = (props: { action: string }) => {
   const [film] = useMovie({});
@@ -90,7 +88,7 @@ const CharacterCRUD = (props: { action: string }) => {
     <div className="container">
       <div className="row my-5">
         <div className="card py-5">
-          <div className="tile">
+          <div className="title">
             <h1 className="fs-3 mb-5 text-center">{props.action} Character</h1>
           </div>
           <form className="was-validated" onSubmit={handleSubmit}>
