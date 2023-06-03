@@ -26,7 +26,16 @@ import SingleTechnologie from "./page/Details/SingleTechnologie";
 import SingleVehicle from "./page/Details/SingleVehicle";
 import SingleWeapon from "./page/Details/SingleWeapon";
 
-import CharacterCRUD from "./components/crud/characterCRUD";
+import CharacterCRUD from "./components/Crud/characterCRUD";
+import CreatureCRUD from "./components/Crud/creatureCRUD";
+import DroidCRUD from "./components/Crud/droidCRUD";
+import FactionCRUD from "./components/Crud/factionCRUD";
+import MovieCRUD from "./components/Crud/movieCRUD";
+import SerieCRUD from "./components/Crud/serieCRUD";
+import SpecieCRUD from "./components/Crud/specieCRUD";
+import TechnologieCRUD from "./components/Crud/technologiesCRUD";
+import VehicleCRUD from "./components/Crud/vehiclesCRUD";
+import WeaponCRUD from "./components/Crud/weaponsCRUD";
 
 function App() {
   return (
@@ -44,46 +53,67 @@ function App() {
 
         <Route path="/creatures">
           <Route index element={<Creature />} />
+          <Route path="create" element={<CreatureCRUD action="Create" />} />
+          <Route path="edit/:id" element={<CreatureCRUD action="Update" />} />
           <Route path=":id" element={<SingleCreature />} />
         </Route>
 
         <Route path="/droids">
           <Route index element={<Droid />} />
+          <Route path="create" element={<DroidCRUD action="Create" />} />
+          <Route path="edit/:id" element={<DroidCRUD action="Update" />} />
           <Route path=":id" element={<SingleDroid />} />
         </Route>
 
         <Route path="/factions">
           <Route index element={<Faction />} />
+          <Route path="create" element={<FactionCRUD action="Create" />} />
+          <Route path="edit/:id" element={<FactionCRUD action="Update" />} />
           <Route path=":id" element={<SingleFaction />} />
         </Route>
 
         <Route path="/movies">
           <Route index element={<Movie />} />
+          <Route path="create" element={<MovieCRUD action="Create" />} />
+          <Route path="edit/:id" element={<MovieCRUD action="Update" />} />
           <Route path=":id" element={<SingleMovie />} />
         </Route>
 
         <Route path="/series">
           <Route index element={<Serie />} />
+          <Route path="create" element={<SerieCRUD action="Create" />} />
+          <Route path="edit/:id" element={<SerieCRUD action="Update" />} />
           <Route path=":id" element={<SingleSerie />} />
         </Route>
 
         <Route path="/species">
           <Route index element={<Specie />} />
+          <Route path="create" element={<SpecieCRUD action="Create" />} />
+          <Route path="edit/:id" element={<SpecieCRUD action="Update" />} />
           <Route path=":id" element={<SingleSpecie />} />
         </Route>
 
         <Route path="/technologies">
           <Route index element={<Technologie />} />
+          <Route path="create" element={<TechnologieCRUD action="Create" />} />
+          <Route
+            path="edit/:id"
+            element={<TechnologieCRUD action="Update" />}
+          />
           <Route path=":id" element={<SingleTechnologie />} />
         </Route>
 
         <Route path="/vehicles">
           <Route index element={<Vehicle />} />
+          <Route path="create" element={<VehicleCRUD action="Create" />} />
+          <Route path="edit/:id" element={<VehicleCRUD action="Update" />} />
           <Route path=":id" element={<SingleVehicle />} />
         </Route>
 
         <Route path="/weapons">
           <Route index element={<Weapon />} />
+          <Route path="create" element={<WeaponCRUD action="Create" />} />
+          <Route path="edit/:id" element={<WeaponCRUD action="Update" />} />
           <Route path=":id" element={<SingleWeapon />} />
         </Route>
       </Routes>
