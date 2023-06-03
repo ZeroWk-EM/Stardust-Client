@@ -2,7 +2,6 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
 import { useCreature } from "../hook/useCreature";
-import CreatureModal from "../components/crud/creatureModal";
 const Creature = () => {
   const [page, setPage] = useState<number>(1);
   let [creature, maxpage, totalCreature] = useCreature({}, page);

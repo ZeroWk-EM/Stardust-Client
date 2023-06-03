@@ -2,7 +2,6 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
 import { useDroid } from "../hook/useDroid";
-import DroidModal from "../components/crud/droidModal";
 
 const Droid = () => {
   const [page, setPage] = useState<number>(1);

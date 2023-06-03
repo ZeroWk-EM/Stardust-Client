@@ -2,7 +2,6 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
 import { useTechnologies } from "../hook/useTechnologies";
-import TechnologieModal from "../components/crud/technologiesModal";
 const Technologie = () => {
   const [page, setPage] = useState<number>(1);
   let [technologie, maxpage, totalTechnologie] = useTechnologies({}, page);

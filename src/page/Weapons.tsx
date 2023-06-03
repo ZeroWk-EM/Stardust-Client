@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
-import WeaponModal from "../components/crud/weaponsModal";
 import { useWeapon } from "../hook/useWeapon";
 const Weapon = () => {
   const [page, setPage] = useState<number>(1);

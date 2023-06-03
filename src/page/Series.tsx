@@ -2,7 +2,6 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
 import { useSerie } from "../hook/UseSeries";
-import SerieModal from "../components/crud/serieModal";
 const Serie = () => {
   const [page, setPage] = useState<number>(1);
   let [serie, maxpage, totalSerie] = useSerie({}, page);

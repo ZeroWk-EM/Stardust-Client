@@ -2,7 +2,6 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
 import { useMovie } from "../hook/useMovie";
-import MovieModal from "../components/crud/movieModal";
 const Movie = () => {
   const [page, setPage] = useState<number>(1);
   let [movie, maxpage, totalMovie] = useMovie({}, page);

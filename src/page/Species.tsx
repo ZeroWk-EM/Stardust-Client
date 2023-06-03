@@ -2,7 +2,6 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
 import { useSpecie } from "../hook/useSpecies";
-import SpecieModal from "../components/crud/specieModal";
 const Specie = () => {
   const [page, setPage] = useState<number>(1);
   let [specie, maxpage, totalSpecie] = useSpecie({}, page);

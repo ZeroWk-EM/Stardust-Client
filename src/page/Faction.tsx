@@ -2,7 +2,6 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
 import { useFaction } from "../hook/useFaction";
-import FactionModal from "../components/crud/factionModal";
 const Faction = () => {
   const [page, setPage] = useState<number>(1);
   let [faction, maxpage, totalFaction] = useFaction({}, page);

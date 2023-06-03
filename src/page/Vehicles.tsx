@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
-import VehicleModal from "../components/crud/vehiclesModal";
 import { useVehicle } from "../hook/useVehicle";
 const Vehicle = () => {
   const [page, setPage] = useState<number>(1);

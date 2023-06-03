@@ -1,4 +1,4 @@
-import "./Singlecard.css";
+import "./css/Singlecard.css";
 
 import axios from "axios";
 import { useEffect, useState } from "react";
