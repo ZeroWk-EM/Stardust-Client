@@ -8,7 +8,7 @@ const Endpoint = () => {
       <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
         {endpointCard && endpointCard.map((item,index)=>{
           return (
-            <CardEndpoint title={item.title} backgroundIMG={item.backgroundIMG} icon={item.icon} counter={item.counter} link={item.link}/>
+            <CardEndpoint key={Math.random()} title={item.title} backgroundIMG={item.backgroundIMG} icon={item.icon} counter={item.counter} link={item.link}/>
           )
         })}
       </div>
