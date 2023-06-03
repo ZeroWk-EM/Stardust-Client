@@ -1,5 +1,4 @@
-import { EyeColorEnum } from "./enum/eyecolor.enum";
-import { GenderEnum } from "./enum/gender.enum";
+
 interface ICharacter {
   _id?:string;
   image?: string;
@@ -7,10 +6,10 @@ interface ICharacter {
   surname?: string;
   height?: number;
   weight?: number;
-  gender?: GenderEnum;
+  gender?: string;
   hair_color?: string;
   skin_color?: string;
-  eye_color?: EyeColorEnum;
+  eye_color?: string;
   birth_year?: string;
   homeworld?: string;
   factions?: string[];
