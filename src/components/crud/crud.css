@@ -1,0 +1,18 @@
+.card{
+    background-color: #141414 !important;
+    color: white;
+}
+
+.form-floating{
+    color: black;
+}
+
+.multiselect-style{
+    max-width: inherit !important;
+    min-width: -webkit-fill-available !important;
+    min-height: 57px !important;
+}
+
+.eye{
+    min-height: 57px !important;
+}
