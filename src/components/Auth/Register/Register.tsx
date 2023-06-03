@@ -13,24 +13,24 @@ return (
       <div className="modal-body p-5 pt-0">
         <form className="">
           <div className="form-floating mb-3">
-            <input type="text" className="form-control rounded-3" id="floatingInput" placeholder="Inser Your Name" />
-            <label htmlFor="floatingInput">Name</label>
+            <input type="text" className="form-control rounded-3" id="usernameReg" placeholder="Inser Your Name" />
+            <label htmlFor="usernameReg">Name</label>
           </div>
           <div className="form-floating mb-3">
-            <input type="etextmail" className="form-control rounded-3" id="floatingInput" placeholder="Insert Your Surname" />
-            <label htmlFor="floatingInput">Surname</label>
+            <input type="etextmail" className="form-control rounded-3" id="lastnameREG" placeholder="Insert Your Surname" />
+            <label htmlFor="lastnameREG">Surname</label>
           </div>
           <div className="form-floating mb-3">
-            <input type="text" className="form-control rounded-3" id="floatingInput" placeholder="Insert Your Nickname" />
-            <label htmlFor="floatingInput">Nickname</label>
+            <input type="text" className="form-control rounded-3" id="nicknameREG" placeholder="Insert Your Nickname" />
+            <label htmlFor="nicknameREG">Nickname</label>
           </div>
           <div className="form-floating mb-3">
-            <input type="email" className="form-control rounded-3" id="floatingInput" placeholder="Insert Your Email" />
-            <label htmlFor="floatingInput">Email address</label>
+            <input type="email" className="form-control rounded-3" id="emailREG" placeholder="Insert Your Email" />
+            <label htmlFor="emailREG">Email address</label>
           </div>
           <div className="form-floating mb-3">
-            <input type="password" className="form-control rounded-3" id="floatingPassword" placeholder="Insert Your Password"/>
-            <label htmlFor="floatingPassword">Password</label>
+            <input type="password" className="form-control rounded-3" id="passowordREG" placeholder="Insert Your Password"/>
+            <label htmlFor="passowordREG">Password</label>
           </div>
           <button className="w-100 mb-2 btn btn-lg rounded-3 btn-warning" type="submit">Register</button>
           <small className="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>

@@ -13,12 +13,12 @@ return (
       <div className="modal-body p-5 pt-0">
         <form className="">
           <div className="form-floating mb-3">
-            <input type="email" className="form-control rounded-3" id="floatingInput" placeholder="name@example.com" />
-            <label htmlFor="floatingInput">Email address</label>
+            <input type="email" className="form-control rounded-3" id="loginEmail" placeholder="name@example.com" />
+            <label htmlFor="loginEmail">Email address</label>
           </div>
           <div className="form-floating mb-3">
-            <input type="password" className="form-control rounded-3" id="floatingPassword" placeholder="Password"/>
-            <label htmlFor="floatingPassword">Password</label>
+            <input type="password" className="form-control rounded-3" id="loginPassword" placeholder="Password"/>
+            <label htmlFor="loginPassword">Password</label>
           </div>
           <button className="w-100 mb-2 btn btn-lg rounded-3 btn-warning" type="submit">Log in</button>
         </form>
