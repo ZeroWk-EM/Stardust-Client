@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
-import VehicleModal from "../components/modal/vehiclesModal";
+import VehicleModal from "../components/crud/vehiclesModal";
 import { useVehicle } from "../hook/useVehicle";
 const Vehicle = () => {
   const [page, setPage] = useState<number>(1);
@@ -49,9 +49,7 @@ const Vehicle = () => {
         <div className="container mt-4">
           <div className="row row-cols-1 row-cols-md-3 g-4">
             {page === 1 ? (
-              <NewElement title={"Vehicle"}>
-                <VehicleModal action="Create" />
-              </NewElement>
+              <NewElement title={"Vehicle"}/>
             ) : (
               <></>
             )}

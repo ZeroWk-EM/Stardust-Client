@@ -2,7 +2,7 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
 import { useCreature } from "../hook/useCreature";
-import CreatureModal from "../components/modal/creatureModal";
+import CreatureModal from "../components/crud/creatureModal";
 const Creature = () => {
   const [page, setPage] = useState<number>(1);
   let [creature, maxpage, totalCreature] = useCreature({}, page);
@@ -49,9 +49,7 @@ const Creature = () => {
         <div className="container mt-4">
           <div className="row row-cols-1 row-cols-md-3 g-4">
             {page === 1 ? (
-              <NewElement title={"Creature"}>
-                <CreatureModal action="Create" />
-              </NewElement>
+              <NewElement title={"Creature"}/>
             ) : (
               <></>
             )}

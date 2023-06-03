@@ -2,7 +2,7 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
 import { useDroid } from "../hook/useDroid";
-import DroidModal from "../components/modal/droidModal";
+import DroidModal from "../components/crud/droidModal";
 
 const Droid = () => {
   const [page, setPage] = useState<number>(1);
@@ -50,9 +50,8 @@ const Droid = () => {
         <div className="container mt-4">
           <div className="row row-cols-1 row-cols-md-3 g-4">
             {page === 1 ? (
-              <NewElement title={"Droid"}>
-                <DroidModal action="Create" />
-              </NewElement>
+              <NewElement title={"Droid"}/>
+        
             ) : (
               <></>
             )}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
 import { useFaction } from "../hook/useFaction";
-import FactionModal from "../components/modal/factionModal";
+import FactionModal from "../components/crud/factionModal";
 const Faction = () => {
   const [page, setPage] = useState<number>(1);
   let [faction, maxpage, totalFaction] = useFaction({}, page);
@@ -49,9 +49,7 @@ const Faction = () => {
         <div className="container mt-4">
           <div className="row row-cols-1 row-cols-md-3 g-4">
             {page === 1 ? (
-              <NewElement title={"Faction"}>
-                <FactionModal action="Create" />
-              </NewElement>
+              <NewElement title={"Faction"}/>
             ) : (
               <></>
             )}

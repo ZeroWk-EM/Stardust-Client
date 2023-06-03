@@ -2,7 +2,7 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
 import { useTechnologies } from "../hook/useTechnologies";
-import TechnologieModal from "../components/modal/technologiesModal";
+import TechnologieModal from "../components/crud/technologiesModal";
 const Technologie = () => {
   const [page, setPage] = useState<number>(1);
   let [technologie, maxpage, totalTechnologie] = useTechnologies({}, page);
@@ -49,9 +49,7 @@ const Technologie = () => {
         <div className="container mt-4">
           <div className="row row-cols-1 row-cols-md-3 g-4">
             {page === 1 ? (
-              <NewElement title={"Technologie"}>
-                <TechnologieModal action="Create" />
-              </NewElement>
+              <NewElement title={"Technologie"}/>
             ) : (
               <></>
             )}

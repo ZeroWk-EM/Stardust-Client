@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
-import WeaponModal from "../components/modal/weaponsModal";
+import WeaponModal from "../components/crud/weaponsModal";
 import { useWeapon } from "../hook/useWeapon";
 const Weapon = () => {
   const [page, setPage] = useState<number>(1);
@@ -49,9 +49,7 @@ const Weapon = () => {
         <div className="container mt-4">
           <div className="row row-cols-1 row-cols-md-3 g-4">
             {page === 1 ? (
-              <NewElement title={"Creature"}>
-                <WeaponModal action="Create" />
-              </NewElement>
+              <NewElement title={"Creature"}/>
             ) : (
               <></>
             )}

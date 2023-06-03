@@ -2,7 +2,7 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import NewElement from "../components/NewElement/NewElement";
 import { useSpecie } from "../hook/useSpecies";
-import SpecieModal from "../components/modal/specieModal";
+import SpecieModal from "../components/crud/specieModal";
 const Specie = () => {
   const [page, setPage] = useState<number>(1);
   let [specie, maxpage, totalSpecie] = useSpecie({}, page);
@@ -49,9 +49,7 @@ const Specie = () => {
         <div className="container mt-4">
           <div className="row row-cols-1 row-cols-md-3 g-4">
             {page === 1 ? (
-              <NewElement title={"Specie"}>
-                <SpecieModal action="Create" />
-              </NewElement>
+              <NewElement title={"Specie"}/>
             ) : (
               <></>
             )}
