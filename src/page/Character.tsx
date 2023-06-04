@@ -30,7 +30,6 @@ const Character = () => {
                   className="btn btn-warning"
                   onClick={() => {
                     setPage(i + 2);
-                    console.log(i + 2);
                   }}
                   key={i}
                 >
