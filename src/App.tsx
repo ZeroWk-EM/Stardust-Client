@@ -36,6 +36,7 @@ import SpecieCRUD from "./components/Crud/specieCRUD";
 import TechnologieCRUD from "./components/Crud/technologiesCRUD";
 import VehicleCRUD from "./components/Crud/vehiclesCRUD";
 import WeaponCRUD from "./components/Crud/weaponsCRUD";
+import ErrorPage from "./page/ErrorPage";
 
 function App() {
   return (
@@ -47,6 +48,12 @@ function App() {
         <Route path="/characters">
           <Route index element={<Character />} />
           <Route path="create" element={<CharacterCRUD action="Create" />} />
+          <Route
+            path="edit"
+            element={
+              <ErrorPage message="To make the change, it is necessary to specify ID" />
+            }
+          />
           <Route path="edit/:id" element={<CharacterCRUD action="Update" />} />
           <Route path=":id" element={<SingleCharacter />} />
         </Route>
@@ -54,6 +61,12 @@ function App() {
         <Route path="/creatures">
           <Route index element={<Creature />} />
           <Route path="create" element={<CreatureCRUD action="Create" />} />
+          <Route
+            path="edit"
+            element={
+              <ErrorPage message="To make the change, it is necessary to specify ID" />
+            }
+          />
           <Route path="edit/:id" element={<CreatureCRUD action="Update" />} />
           <Route path=":id" element={<SingleCreature />} />
         </Route>
@@ -61,6 +74,12 @@ function App() {
         <Route path="/droids">
           <Route index element={<Droid />} />
           <Route path="create" element={<DroidCRUD action="Create" />} />
+          <Route
+            path="edit"
+            element={
+              <ErrorPage message="To make the change, it is necessary to specify ID" />
+            }
+          />
           <Route path="edit/:id" element={<DroidCRUD action="Update" />} />
           <Route path=":id" element={<SingleDroid />} />
         </Route>
@@ -68,6 +87,12 @@ function App() {
         <Route path="/factions">
           <Route index element={<Faction />} />
           <Route path="create" element={<FactionCRUD action="Create" />} />
+          <Route
+            path="edit"
+            element={
+              <ErrorPage message="To make the change, it is necessary to specify ID" />
+            }
+          />
           <Route path="edit/:id" element={<FactionCRUD action="Update" />} />
           <Route path=":id" element={<SingleFaction />} />
         </Route>
@@ -75,6 +100,12 @@ function App() {
         <Route path="/movies">
           <Route index element={<Movie />} />
           <Route path="create" element={<MovieCRUD action="Create" />} />
+          <Route
+            path="edit"
+            element={
+              <ErrorPage message="To make the change, it is necessary to specify ID" />
+            }
+          />
           <Route path="edit/:id" element={<MovieCRUD action="Update" />} />
           <Route path=":id" element={<SingleMovie />} />
         </Route>
@@ -82,6 +113,12 @@ function App() {
         <Route path="/series">
           <Route index element={<Serie />} />
           <Route path="create" element={<SerieCRUD action="Create" />} />
+          <Route
+            path="edit"
+            element={
+              <ErrorPage message="To make the change, it is necessary to specify ID" />
+            }
+          />
           <Route path="edit/:id" element={<SerieCRUD action="Update" />} />
           <Route path=":id" element={<SingleSerie />} />
         </Route>
@@ -89,6 +126,12 @@ function App() {
         <Route path="/species">
           <Route index element={<Specie />} />
           <Route path="create" element={<SpecieCRUD action="Create" />} />
+          <Route
+            path="edit"
+            element={
+              <ErrorPage message="To make the change, it is necessary to specify ID" />
+            }
+          />
           <Route path="edit/:id" element={<SpecieCRUD action="Update" />} />
           <Route path=":id" element={<SingleSpecie />} />
         </Route>
@@ -96,6 +139,12 @@ function App() {
         <Route path="/technologies">
           <Route index element={<Technologie />} />
           <Route path="create" element={<TechnologieCRUD action="Create" />} />
+          <Route
+            path="edit"
+            element={
+              <ErrorPage message="To make the change, it is necessary to specify ID" />
+            }
+          />
           <Route
             path="edit/:id"
             element={<TechnologieCRUD action="Update" />}
@@ -106,6 +155,12 @@ function App() {
         <Route path="/vehicles">
           <Route index element={<Vehicle />} />
           <Route path="create" element={<VehicleCRUD action="Create" />} />
+          <Route
+            path="edit"
+            element={
+              <ErrorPage message="To make the change, it is necessary to specify ID" />
+            }
+          />
           <Route path="edit/:id" element={<VehicleCRUD action="Update" />} />
           <Route path=":id" element={<SingleVehicle />} />
         </Route>
@@ -113,9 +168,17 @@ function App() {
         <Route path="/weapons">
           <Route index element={<Weapon />} />
           <Route path="create" element={<WeaponCRUD action="Create" />} />
+          <Route
+            path="edit"
+            element={
+              <ErrorPage message="To make the change, it is necessary to specify ID" />
+            }
+          />
           <Route path="edit/:id" element={<WeaponCRUD action="Update" />} />
           <Route path=":id" element={<SingleWeapon />} />
         </Route>
+
+        <Route path="*" element={<ErrorPage message="Invalid routes" />} />
       </Routes>
       <Footer />
     </div>
