@@ -1,4 +1,4 @@
-const ErroPage = (props:{message:string}) => {
+const ErrorPage = (props:{message:string}) => {
  
   return (
     <div className="container">
@@ -14,4 +14,4 @@ const ErroPage = (props:{message:string}) => {
   );
 };
 
-export default ErroPage;
+export default ErrorPage;
