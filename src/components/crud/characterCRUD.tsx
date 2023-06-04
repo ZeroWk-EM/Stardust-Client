@@ -69,16 +69,25 @@ const CharacterCRUD = (props: { action: string }) => {
       weapons: selectedWeapon?.map((item) => item.name),
     };
     try {
+
+      const headers = {
+        // Custom headers
+        authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdjNTNmNWRlMDk0MGJjOGFlYTM2NjAiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2ODU4Njk2MTJ9.F_KDxMCE2gtW4Znw6ThHmqN9u1f4f4bdlsreq2_CzaU',
+        'Content-Type': 'application/json',
+      };
+
       axios
-        .post("http://localhost:5000/v1/characters/", character)
+        .post("http://localhost:5000/v1/characters/", character,{headers})
         .then(() => {
           window.alert("Utente creato con successo");
           navigate("/characters");
         })
-        .catch((e) => {
-          window.alert(
-            "Errore nella creazione dell'utente, eseguire un controllo sui campi"
-          );
+        .catch((error) => {
+          if(error.response.status === 401){
+            window.alert(
+              "Devi essere registrato per creare un'nuovo utente"
+            );
+          }
         });
     } catch (e) {
       console.log(e);
