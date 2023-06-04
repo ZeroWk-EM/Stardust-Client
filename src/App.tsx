@@ -37,6 +37,7 @@ import TechnologieCRUD from "./components/Crud/technologiesCRUD";
 import VehicleCRUD from "./components/Crud/vehiclesCRUD";
 import WeaponCRUD from "./components/Crud/weaponsCRUD";
 import ErrorPage from "./page/ErrorPage";
+import ValidatePage from "./page/Validate";
 
 function App() {
   return (
@@ -44,6 +45,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route index path="/" element={<Home />} />
+
+        <Route path="validateEmail" element={<ValidatePage />} />
+        <Route path="validateEmail/:verify" element={<ValidatePage />} />
 
         <Route path="/characters">
           <Route index element={<Character />} />
