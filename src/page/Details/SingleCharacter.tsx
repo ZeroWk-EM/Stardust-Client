@@ -1,14 +1,20 @@
-import "./css/Singlecard.css"
+import "./css/Singlecard.css";
+import { useNavigate } from "react-router-dom";
+
 
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ICharacter from "../../interface/characters.interface";
 import { useParams } from "react-router-dom";
+import { useCookies } from "react-cookie";
 const urlCharacter = "http://localhost:5000/v1/characters";
+
 
 const SingleCharacter = (props: ICharacter) => {
   const { id } = useParams();
+  const [cookie] = useCookies(["username","token"]);
   const [character, setCharacter] = useState<ICharacter>({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -21,10 +27,32 @@ const SingleCharacter = (props: ICharacter) => {
       });
   }, [id]);
 
+  const handleDelete = () => {
+
+    const headers = {
+      authorization: `${cookie.token}`,
+      'Content-Type': 'application/json',
+    };
+
+    axios.delete(`${urlCharacter}/${String(id)}`,{headers}).then((response) => {
+      window.alert(`${response.data.message}`);
+      navigate("/characters")
+    });
+  };
+
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-3 mt-5">
+       {cookie.token? <div className="d-grid gap-2 mt-3">
+          <button
+            className="btn btn-danger"
+            onClick={handleDelete}
+            type="submit"
+          >
+            Elimina {`${character.name} ${character.surname}`}
+          </button>
+        </div>:<></>}
+        <div className="col-md-3 mt-3">
           <div
             className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg sizig_img"
             style={{
@@ -34,7 +62,7 @@ const SingleCharacter = (props: ICharacter) => {
           ></div>
         </div>
 
-        <div className="col-md-9 mt-5">
+        <div className="col-md-9 mt-3">
           <div
             className="card h-100 sizig_img"
             style={{
