@@ -26,10 +26,10 @@ const RegisterModal = () => {
           window.alert("Utente registrato con successo, verifica l'email");
         })
         .catch((e) => {
-          if (Number(e.response.status) === 409) {
+          if (Number(e.response?.status) === 409) {
             window.alert("Email già presente, utilizzarne un'altra");
           }
-          if (Number(e.response.status) === 400) {
+          if (Number(e.response?.status) === 400) {
             window.alert("Errore nella creazione dell'utente");
           }
         });
