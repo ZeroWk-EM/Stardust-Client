@@ -13,6 +13,7 @@ import IVehicles from "../../interface/vehicles.interface";
 import IWeapons from "../../interface/weapons.interface";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 const CharacterCRUD = (props: { action: string }) => {
   const [film] = useMovie({});
@@ -47,6 +48,10 @@ const CharacterCRUD = (props: { action: string }) => {
   const [homeworld, setHomeworld] = useState<String>("");
   const [specie, setSpecie] = useState<String>("");
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [cookie] = useCookies(["username","token"]);
+
+
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const character = {
@@ -69,23 +74,23 @@ const CharacterCRUD = (props: { action: string }) => {
       weapons: selectedWeapon?.map((item) => item.name),
     };
     try {
-
+      
       const headers = {
         // Custom headers
-        authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdjNTNmNWRlMDk0MGJjOGFlYTM2NjAiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2ODU4Njk2MTJ9.F_KDxMCE2gtW4Znw6ThHmqN9u1f4f4bdlsreq2_CzaU',
+        authorization: `${cookie.token}`,
         'Content-Type': 'application/json',
       };
 
       axios
         .post("http://localhost:5000/v1/characters/", character,{headers})
         .then(() => {
-          window.alert("Utente creato con successo");
+          window.alert("Successfully created character");
           navigate("/characters");
         })
         .catch((error) => {
-          if(error.response.status === 401){
+          if(error.response?.status === 401){
             window.alert(
-              "Devi essere registrato per creare un'nuovo utente"
+              "Error in token...make sure you are registered"
             );
           }
         });
@@ -367,9 +372,11 @@ const CharacterCRUD = (props: { action: string }) => {
               </div>
             </div>
             <div className="d-grid gap-2">
-              <button className="btn btn-warning" type="submit">
+              {cookie.username ? <button className="btn btn-warning" type="submit">
                 Crea {name} {surname}
-              </button>
+              </button>:<button className="btn btn-danger" disabled>
+              You must be registered to create a character
+              </button>}
             </div>
           </form>
         </div>
