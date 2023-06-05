@@ -38,16 +38,38 @@ import VehicleCRUD from "./components/Crud/vehiclesCRUD";
 import WeaponCRUD from "./components/Crud/weaponsCRUD";
 import ErrorPage from "./page/ErrorPage";
 import ValidatePage from "./page/Validate";
+import { useCookies } from "react-cookie";
 
 function App() {
+
+  const [cookie] = useCookies(["username", "token"]);
+
   return (
     <div className="App bg-dark">
       <Navbar />
       <Routes>
         <Route index path="/" element={<Home />} />
 
-        <Route path="validateEmail" element={<ValidatePage />} />
-        <Route path="validateEmail/:verify" element={<ValidatePage />} />
+        <Route
+          path="validateEmail"
+          element={
+            !cookie.username  ? (
+              <ValidatePage />
+            ) : (
+              <ErrorPage message="This user has already been verified" />
+            )
+          }
+        />
+        <Route
+          path="validateEmail/:verify"
+          element={
+            !cookie.username  ? (
+              <ValidatePage />
+            ) : (
+              <ErrorPage message="This user has already been verified" />
+            )
+          }
+        />
 
         <Route path="/characters">
           <Route index element={<Character />} />
@@ -182,7 +204,7 @@ function App() {
           <Route path=":id" element={<SingleWeapon />} />
         </Route>
 
-        <Route path="*" element={<ErrorPage message="Invalid routes" />} />
+        <Route path="*" element={<ErrorPage code={404} message="Invalid routes, page not found" />} />
       </Routes>
       <Footer />
     </div>
