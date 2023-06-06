@@ -14,8 +14,8 @@ const Navbar = () => {
   const [cookie, _, removeCookie] = useCookies(["username", "token"]);
 
   const handleLogout = () => {
-    removeCookie("username");
-    removeCookie("token");
+    removeCookie("username", { path: "/" });
+    removeCookie("token", { path: "/" });
     window.alert("Logout avvenuto con successo");
     window.location.reload();
   };

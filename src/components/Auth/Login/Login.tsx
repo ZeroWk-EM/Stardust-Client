@@ -4,14 +4,11 @@ import "../Auth.css";
 import { useState } from "react";
 import { useCookies } from "react-cookie";
 
-
 const LoginModal = () => {
-
-
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const [_, setCookie] = useCookies(["username","token"]);
+  const [_, setCookie] = useCookies(["username", "token"]);
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -24,13 +21,12 @@ const LoginModal = () => {
       axios
         .post("http://localhost:5000/v1/auth/login", loginUser)
         .then((response) => {
-          setCookie("username",response.data.username)
-          setCookie("token",response.data.token)
-          window.alert("Login avvenuto con successo")
-          window.location.reload()
+          setCookie("username", response.data.username, { path: "/" });
+          setCookie("token", response.data.token, { path: "/" });
+          window.alert("Login avvenuto con successo");
+          window.location.reload();
         })
         .catch((error) => {
-
           if (error.response?.status === 400) {
             window.alert("Errore...DATI ERRATI O EMAIL NON VERIFICATA");
           }
