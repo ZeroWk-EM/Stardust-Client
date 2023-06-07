@@ -194,7 +194,6 @@ const CharacterCRUD = (props: { action: string }) => {
                     placeholder="Enter hair color"
                     value={String(hairColor)}
                     onChange={(e) => setHairColor(e.target.value)}
-                    required
                   />
                   <label htmlFor="hair_color">Hair Color</label>
                 </div>
@@ -373,7 +372,7 @@ const CharacterCRUD = (props: { action: string }) => {
             </div>
             <div className="d-grid gap-2">
               {cookie.username ? <button className="btn btn-warning" type="submit">
-                Crea {name} {surname}
+                Create {name} {surname}
               </button>:<button className="btn btn-danger" disabled>
               You must be registered to create a character
               </button>}
