@@ -16,7 +16,7 @@ export const useVehicle = (
       .then((response: any) => {
         setvehicle(response.data.vehicles);
         setMaxpage(response.data.info.maxpage);
-        settotalVehicle(response.data.info.totalVehicle);
+        settotalVehicle(response.data.info.totalVehicles);
       })
       .catch((err) => {
         console.log(err);

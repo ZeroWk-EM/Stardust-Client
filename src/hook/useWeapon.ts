@@ -13,7 +13,7 @@ export const useWeapon = (props: IWeapon, page = 1): [IWeapon[],Number,Number] =
       .then((response: any) => {
         setweapon(response.data.weapons);
         setMaxpage(response.data.info.maxpage);
-        settotalWeapon(response.data.info.totalWeapon);
+        settotalWeapon(response.data.info.totalWeapons);
       })
       .catch((err) => {
         console.log(err);

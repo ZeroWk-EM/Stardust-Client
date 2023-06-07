@@ -14,9 +14,9 @@ export const useTechnologies = (
     axios
       .get<ITechnologies>(`${urlTechnologies}?page=${page}`)
       .then((response: any) => {
-        settechnologies(response.data.technologiess);
+        settechnologies(response.data.technologies);
         setMaxpage(response.data.info.maxpage);
-        settotalTechnologies(response.data.info.totalTechnologies);
+        settotalTechnologies(response.data.info.totalTechnologie);
       })
       .catch((err) => {
         console.log(err);
