@@ -122,6 +122,7 @@ const RegisterModal = () => {
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
+                  required
                 />
                 <label htmlFor="passowordREG">Password</label>
               </div>
