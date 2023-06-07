@@ -49,7 +49,7 @@ const SingleCharacter = (props: ICharacter) => {
               onClick={handleDelete}
               type="submit"
             >
-              Elimina {`${character.name} ${character.surname}`}
+              Delete {`${character.name} ${character.surname}`}
             </button>
           </div>
         ) : (
